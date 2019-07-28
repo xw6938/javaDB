@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springproj_1.demo.mapper.StudentMapper">
+
+    <resultMap id="StudentInfo" type="springproj_1.demo.entity.Student">
+        <result column="Sno" jdbcType="int" property="Sno"/>
+        <result column="Sname" jdbcType="VARCHAR" property="Sname"/>
+    </resultMap>
+
+    <select id="findStu" resultType="springproj_1.demo.entity.Student">
+        select * from Student WHERE Sno = #{Sno}
+    </select>
+
+    <insert id="addStu" parameterType="springproj_1.demo.entity.Student">
+        insert into Student(Sno, Sname) values (#{Sno}, #{Sname})
+    </insert>
+
+    <delete id="delStu" parameterType="int">
+        delete from Student where id = #{id}
+    </delete>
+
+    <update id="updateStu" parameterType="int">
+        UPDATE Student set Sname = #{Sname} where id = #{id}
+    </update>
+
+</mapper>

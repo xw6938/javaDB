@@ -18,6 +18,7 @@ public class UserController {
         return userService.Sel(id).toString();
     }
 
+
 //    @RequestMapping(value = "/getUser/{id}", method = {RequestMethod.GET, RequestMethod.POST})
 //    String getUserByGet(@RequestBody String data) {
 //        return "Hello" + data;
