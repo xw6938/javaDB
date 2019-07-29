@@ -16,8 +16,11 @@ public class GetStuInfo {
     private StudentService studentService;
 
     @RequestMapping("/getById/{id}")
-    public String GetById(@PathVariable int id) {
-        return studentService.findStu(id).getSname();
+    public int GetById(@PathVariable int id) {
+        Student stu = new Student();
+        stu.setSno(10);
+        stu.setSname("change");
+        return studentService.delStu(10);
     }
 
 

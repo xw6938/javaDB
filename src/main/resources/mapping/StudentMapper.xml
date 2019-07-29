@@ -3,7 +3,7 @@
 <mapper namespace="springproj_1.demo.mapper.StudentMapper">
 
     <resultMap id="StudentInfo" type="springproj_1.demo.entity.Student">
-        <result column="Sno" jdbcType="int" property="Sno"/>
+        <result column="Sno" jdbcType="INTEGER" property="Sno"/>
         <result column="Sname" jdbcType="VARCHAR" property="Sname"/>
     </resultMap>
 
@@ -16,11 +16,11 @@
     </insert>
 
     <delete id="delStu" parameterType="int">
-        delete from Student where id = #{id}
+        delete from Student where Sno = #{Sno}
     </delete>
 
-    <update id="updateStu" parameterType="int">
-        UPDATE Student set Sname = #{Sname} where id = #{id}
+    <update id="updateStu" parameterType="springproj_1.demo.entity.Student">
+        UPDATE Student set Sname = #{Sname} where Sno = #{Sno}
     </update>
 
 </mapper>
