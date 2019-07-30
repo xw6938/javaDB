@@ -13,5 +13,5 @@ public interface StudentMapper {
 
     Integer delStu(int Sno);
 
-    Integer updateStu(Map<String, Integer> map);
+    Integer updateStu(Map<String, Object> map);
 }

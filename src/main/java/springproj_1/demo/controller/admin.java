@@ -32,8 +32,9 @@ public class admin {
 
     @RequestMapping(value = "/updateStudent", method = RequestMethod.PUT)
     public int updateStudent(@RequestParam int Sno, @RequestParam String Sname) {
-        Map<String, Integer> map = new HashMap<>();
-        map.put(Sname, Sno);
+        Map<String, Object> map = new HashMap<>();
+        map.put("Sname", Sname);
+        map.put("Sno", Sno);
         return studentService.updateStu(map);
     }
 
