@@ -1,11 +1,12 @@
 package springproj_1.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import springproj_1.demo.entity.Student;
 import springproj_1.demo.service.StudentService;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/administration")
@@ -14,20 +15,26 @@ public class admin {
     @Autowired
     private StudentService studentService;
 
-    @RequestMapping("/addStudent")
-    public int addStudent(@PathVariable Student student) {
+    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+    public int addStudent(@RequestBody Student student) {
         return studentService.addStu(student);
     }
 
-    @RequestMapping("/delStudent")
+    //    @RequestMapping(value = "/getUser/{id}", method = {RequestMethod.GET, RequestMethod.POST})
+//    String getUserByGet(@RequestBody String data) {
+//        return "Hello" + data;
+
+    @RequestMapping(value = "/delStudent/{Sno}", method = RequestMethod.DELETE)
     public int delStudent(@PathVariable int Sno) {
         return studentService.delStu(Sno);
     }
 
 
-    @RequestMapping("/updateStudent")
-    public int updateStudent(@PathVariable Student student) {
-        return studentService.updateStu(student);
+    @RequestMapping(value = "/updateStudent", method = RequestMethod.PUT)
+    public int updateStudent(@RequestParam int Sno, @RequestParam String Sname) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put(Sname, Sno);
+        return studentService.updateStu(map);
     }
 
 }

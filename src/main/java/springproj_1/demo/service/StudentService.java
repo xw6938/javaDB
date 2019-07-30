@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import springproj_1.demo.entity.Student;
 import springproj_1.demo.mapper.StudentMapper;
 
+import java.util.Map;
+
 @Service
 public class StudentService {
     @Autowired
@@ -22,7 +24,7 @@ public class StudentService {
         return studentMapper.delStu(Sno);
     }
 
-    public int updateStu(Student stu) {
-        return studentMapper.updateStu(stu);
+    public int updateStu(Map map) {
+        return studentMapper.updateStu(map);
     }
 }

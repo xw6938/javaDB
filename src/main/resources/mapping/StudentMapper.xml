@@ -19,8 +19,8 @@
         delete from Student where Sno = #{Sno}
     </delete>
 
-    <update id="updateStu" parameterType="springproj_1.demo.entity.Student">
-        UPDATE Student set Sname = #{Sname} where Sno = #{Sno}
+    <update id="updateStu" parameterType="map">
+        update Student set Sname = #{Sname} where Sno = #{Sno}
     </update>
 
 </mapper>
