@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import springproj_1.demo.DTO.MappingLockDto;
 import springproj_1.demo.mapper.MappingDAO;
 
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class MappingLockService {
