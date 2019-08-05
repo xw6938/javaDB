@@ -1,5 +1,6 @@
 package springproj_1.demo.DTO;
 
+
 public class MappingLockDto {
 
     private String longUrl;
